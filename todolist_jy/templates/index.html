@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container fixed-container">
     <!-- 사이드바 -->
     <nav class="sidebar">
       <div class="sidebar-logo-container">
@@ -21,8 +21,8 @@
       </div>
 
       <div class="menu-bottom">
-        <button class="menu-btn add-btn" id="globalAddBtn">
-          추가
+        <button class="add-btn" id="globalAddBtn">
+          <img src="{{ url_for('static', filename='img/add_button.png') }}" alt="추가" class="sidebar-add-img">
         </button>
       </div>
 
@@ -43,15 +43,9 @@
         <div class="schedule-board">
           <div class="schedule-title-row">
             <h2 id="scheduleCurrentDate" class="schedule-date-label"></h2>
-            <button id="addScheduleBtn" class="schedule-add-btn">일정 추가</button>
+            <!-- 일정 추가 버튼 제거, 사이드바 "추가"만 사용 -->
           </div>
-
           <ul id="scheduleList" class="schedule-list"></ul>
-
-          <p class="schedule-hint">
-            ✔ 클릭 시 일정 완료 처리 / 🗑 클릭 시 삭제<br>
-            (로그인한 계정명으로 LocalStorage에 저장)
-          </p>
         </div>
       </section>
 

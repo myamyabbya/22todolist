@@ -13,9 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const dateBarEl = document.getElementById("scheduleDateBar");
   const currentDateEl = document.getElementById("scheduleCurrentDate");
   const listEl = document.getElementById("scheduleList");
-  const addBtn = document.getElementById("addScheduleBtn");
 
-  if (!dateBarEl || !currentDateEl || !listEl || !addBtn) {
+  // 🔹 기존: const addBtn = document.getElementById("addScheduleBtn");
+  // 🔹 변경: 사이드바 "추가" 버튼 사용
+  const globalAddBtn = document.getElementById("globalAddBtn");
+
+  if (!dateBarEl || !currentDateEl || !listEl) {
     console.warn("Schedule elements missing");
     return;
   }
@@ -104,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function addSchedule() {
+    function addSchedule() {
     const time = prompt("시간 (예: 10:00, 생략 가능)");
     const text = prompt("일정 내용");
     if (!text) return;
@@ -119,7 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(schedules));
   }
 
-  addBtn.addEventListener("click", addSchedule);
+  // 🔹 사이드바 '추가' 버튼 클릭 시, 일정 뷰가 active일 때만 동작
+  if (globalAddBtn) {
+    globalAddBtn.addEventListener("click", () => {
+      if (!scheduleView.classList.contains('active')) return;
+      addSchedule();
+    });
+  }
+
   createDatePills();
   render();
 });
