@@ -29,7 +29,7 @@ body {
 
 /* 사이드바 */
 .sidebar {
-  width: 140px;
+  width: 200px;
   background-color: #899574;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@ body {
 }
 
 .sidebar-logo-container {
-  height: 80px;
+  height: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,17 +62,16 @@ body {
   justify-content: center;
   background: transparent;
   border: none;
-  padding: 10px;
-  width: 100%;
+  padding: 20px;
+  width: 90%;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 25px;
   color: black;
-  border-radius: 8px;
+  border-radius: 90px;
 }
 
 .menu-btn.active {
   font-weight: bold;
-  border: 2px solid #000;
   background-color: #fff;
 }
 
@@ -80,15 +79,24 @@ body {
   margin-top: 10px;
 }
 
+/* 사이드바 '추가' 이미지 버튼 */
 .add-btn {
   width: 100%;
-  padding: 15px 0;
-  background-color: #fff;
-  border-radius: 8px;
+  padding: 0;
+  background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 20px;
-  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* add_button.png 크기 조절 */
+.sidebar-add-img {
+  display: block;
+  width: 155px;
+  /* 필요하면 80~110px 사이로 조절 */
+  height: auto;
 }
 
 .settings-wrap {
@@ -98,8 +106,8 @@ body {
 }
 
 .settings-btn {
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 15px 20px;
+  border-radius: px;
   border: none;
   cursor: pointer;
 }
@@ -114,10 +122,10 @@ body {
 .date-bar {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   background-color: #97b47e;
-  padding: 12px 20px;
-  border-radius: 12px;
+  padding: 20px 25px;
+  border-radius: 20px;
   font-family: 'ChangwonDanggamAsak', Arial, sans-serif;
 }
 
@@ -169,14 +177,15 @@ body {
 }
 
 .schedule-add-btn {
-  padding: 8px 18px;
-  border-radius: 20px;
+  padding: 0;
   border: none;
-  background-color: #ffffff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  background: transparent;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
+}
+
+.add-img {
+  width: 48px;
+  height: auto;
 }
 
 .schedule-list {

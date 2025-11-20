@@ -23,6 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevMonthBtn = document.getElementById('prevMonth');
   const nextMonthBtn = document.getElementById('nextMonth');
   const calendarGrid = document.getElementById('calendarGrid');
+  const globalAddBtn = document.getElementById('globalAddBtn');
+if (globalAddBtn) {
+  globalAddBtn.addEventListener('click', () => {
+    if (!memoView.classList.contains('active')) return;
+    // 메모 추가 로직 실행
+  });
+}
 
   let currentMonth = new Date(selectedDate);
 
